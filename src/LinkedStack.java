@@ -41,15 +41,16 @@ public class LinkedStack {
             return "EMPTY";
         }
         Node current = tail;
+        StringBuilder result = new StringBuilder();
         while (current != null) {
             if (current.getPrev() == null) {
-                System.out.print(current.getValue());
+                result.append(current.getValue());
                 break;
             }
-            System.out.print(current.getValue() + " -> ");
+            result.append(current.getValue()).append(" -> ");
             current = current.getPrev();
         }
-        return "";
+        return result.toString();
     }
 }
 // если есть элементы, пройдитесь по связному списку,
